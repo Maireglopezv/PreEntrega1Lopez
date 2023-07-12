@@ -15,7 +15,12 @@ let sumaTotal = 0;
 const hacerPregunta = function (indice, pregunta, opciones,  respuestaCorrecta, mensajeCorrecto, mensajeIncorrecto, urlCOrrecta) {
     
     const urlIncorrecta = "./img/sigueintentando.png";
-    const respuesta = prompt(pregunta + " " + opciones)
+    const respuesta = parseFloat(prompt(pregunta + " " + opciones));
+    
+    if (isNaN(respuesta)){
+        alert("Hey ¡El resultado ingresado NO es un número!");
+    } 
+
     let imagen, mensaje, puntos
     
     if (respuesta == respuestaCorrecta) {
